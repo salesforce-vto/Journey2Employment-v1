@@ -1,0 +1,59 @@
+<ul aria-describedby="futureforce-onboarding" class="slds-list_vertical slds-has-block-links slds-is-nested">
+    <li>
+    <span class="slds-media slds-media--center">
+      <span class="slds-media__body list__item__title" id="content-trailmixes" class="">
+        Technical Skills Sessions
+      </span>
+    </span>
+    <ul
+        aria-describedby="content-trailmixes"
+        class="slds-list_vertical slds-has-block-links slds-is-nested"
+    >
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "technical_skills" %}
+            <li class="list__item {% if page.url == node.url %}slds-is-active{% endif %}">
+              <a
+                class="app-navigation__action"
+                href="{{ site.baseurl }}{{ node.url }}"
+              >
+                <span class="slds-media slds-media_center">
+                  <span class="slds-media__body">{{ node.title }}</span>
+                </span>
+              </a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </li>
+
+  <li>
+    <span class="slds-media slds-media--center">
+      <span class="slds-media__body list__item__title" id="content-sessions" class="">
+        Interpersonal Skills Sessions
+      </span>
+    </span>
+    <ul
+        aria-describedby="content-sessions"
+        class="slds-list_vertical slds-has-block-links slds-is-nested"
+    >
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "interpersonal_skills" %}
+            <li class="list__item {% if page.url == node.url %}slds-is-active{% endif %}">
+              <a
+                class="app-navigation__action"
+                href="{{ site.baseurl }}{{ node.url }}"
+              >
+                <span class="slds-media slds-media_center">
+                  <span class="slds-media__body">{{ node.title }}</span>
+                </span>
+              </a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </li>
+</ul>

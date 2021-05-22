@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body class="slds-theme_default app">
+    <div class="app__header">
+      {% include globalHeader.html %}
+    </div>
+    <div class="app__body slds-grid">
+      <div class="slds-no-flex app__body__side-bar">
+        {% include homesidebar.html %}
+      </div>
+      <div class="slds-col slds-p-left_large app__body__main">
+          <div class="app__body__content slds-p-around_medium">
+              {{ content }}
+          </div>
+      </div>
+    </div>
+
+    <script>
+      (function(document) {
+          var toggle = document.querySelector('.slds-split-view__toggle-button');
+          var sidebar = document.querySelector('.slds-split-view_container');
+          toggle.addEventListener('click', function(e) {
+              sidebar.classList.toggle('slds-is-closed');
+              sidebar.classList.toggle('slds-is-open');
+          }, false);
+
+          //Scroll selected element to visible area
+          var activeElem = document.querySelector('.slds-is-active');
+          activeElem.scrollIntoViewIfNeeded();
+      })(document);
+    </script>
+    <!-- Script pointing to search-script.js -->
+    <script src="{{ site.baseurl }}/public/js/search.js" type="text/javascript"></script>
+
+    <!-- Configuration -->
+    <script>
+      (function() {
+        var searchInputElem = document.getElementById('search-input');
+        var dropdownElem = document.querySelector('.slds-dropdown-trigger_click');
+        var searchResutlsElem = document.getElementById('search-results__list')
+
+        function showSearchResults(e) {
+          dropdownElem.classList.add('slds-is-open');
+          dropdownElem.setAttribute('aria-expanded', true); 
+        }
+
+        function hideSearchResutls(e) {
+          if(e.target !== searchInputElem) {
+            dropdownElem.classList.remove('slds-is-open');
+            dropdownElem.setAttribute('aria-expanded', false);
+          }
+        }
+
+        function attachSearchEvents() {
+          searchInputElem.removeEventListener('focus', showSearchResults);
+          searchInputElem.addEventListener('focus', showSearchResults);
+
+          document.removeEventListener('click', hideSearchResutls);
+          document.addEventListener('click',hideSearchResutls); 
+
+        }
+        function searchResultTemplate() {
+          return `
+          <li role="presentation" class="slds-listbox__item">
+            <div class="slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                <a href="{url}">{title}</a>
+            </div>
+          </li>
+          `;
+        }
+
+        function init() {
+          attachSearchEvents();
+          // https://github.com/christian-fei/Simple-Jekyll-Search
+          SimpleJekyllSearch({
+            json: '{{ site.baseurl }}/search.json',
+            resultsContainer: searchResutlsElem,
+            searchInput: searchInputElem,
+            searchResultTemplate: searchResultTemplate()
+          });
+        }
+
+        init();
+
+      })();
+
+    </script>
+  </body>
+</html>

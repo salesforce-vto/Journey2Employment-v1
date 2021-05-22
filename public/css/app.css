@@ -1,0 +1,151 @@
+html {
+    background-color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    text-rendering: optimizeLegibility;
+}
+.app {
+    overflow: hidden;
+}
+.app__header {
+    height: 3.125rem;
+}
+.app__body {
+    height: calc(100vh - 3.125rem);
+}
+.app__body__main {
+    font-size: 0.875;
+    overflow: scroll;
+}
+.app-split-view {
+    height: 100%;
+}
+.app-split-view .slds-split-view {
+    overflow: scroll;
+}
+
+.app-navigation .list__item {
+    position: relative;
+}
+.app-navigation .list__item:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+}
+.app-navigation .list__item .slds-icon__svg {
+    width: .5rem;
+    height: .5rem;
+    display: inline-block;
+    fill: #4f6a92;
+}
+.app-navigation__action,
+.list__item__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: .5rem 1.5rem .5rem 2rem;
+    color: #080707; /* #4f6a92 */
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 #1589ee;
+}
+.list__item__title {
+    font-weight: 700;
+}
+.app-navigation .list__item.slds-is-active {
+    font-weight: 700;
+    box-shadow: inset 0.25rem 0 0 #1589ee;
+}
+.app-navigation .list__item.slds-is-active:before,
+.app-navigation .list__item:hover:before {
+    background: rgba(21,137,238,.1);
+}
+.app-navigation .list__item .app-navigation__action:focus {
+    outline: 0;
+    text-decoration: underline;
+}
+.app-navigation .list__item .app-navigation__action:hover {
+    text-decoration: none;
+    box-shadow: inset 0.125rem 0 0 #1589ee;
+}
+
+.app-navigation .list__item.slds-is-open .slds-icon__svg {
+    transform: rotate(90deg);
+}
+
+
+.app__body__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.app__body__content p {
+    margin-bottom: 0.755rem;
+    margin-top: 0.75rem;
+}
+.app__body__content ul {
+    margin-left: 1.5rem;
+    list-style: disc;
+}
+.app__body__content code.highlighter-rouge,
+.app__body__content .highlighter-rouge {
+    background-color: rgba(206,206,206,.3);
+    color: #333;
+    border-radius: .125rem;
+}
+.app__body__content code.highlighter-rouge {
+    padding: .3rem;
+}
+.app__body__content .highlighter-rouge {
+    padding: 0.0625rem 0.8125rem;
+}
+.app__body__content ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.625rem;
+}
+.app__body__content ol {
+    list-style: decimal;
+    margin-left: 1.5rem;
+    margin-top: 0.625rem;
+}
+.app__body__content li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    margin-bottom: 0.625rem;
+}
+.app__body__content h1 {
+    font-weight: 300;
+    font-size: 1.75rem;
+    line-height: 1.25;
+}
+.app__body__content h2 {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-top: 1.5rem;
+}
+.app__body__content h3 {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-top: 1.5rem;
+}
+.app__body__content td,
+.app__body__content th {
+    padding: .25rem .5rem;
+    border: 1px solid #e5e5e5;
+}
+
+.app__body__content tbody tr:nth-child(odd) td,
+.app__body__content tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+
+.slds-listbox__item a {
+    display: block;
+}

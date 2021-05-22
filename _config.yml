@@ -1,0 +1,27 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+#relative_permalinks: true
+
+# Setup
+title:               Salesforce Industries Journey To Employment
+tagline:             ''
+description:         ''
+url:                 /pages/industries/jry2emp
+baseurl:             /pages/industries/jry2emp
+
+# About/contact
+author:
+  name:              Industries Team
+  email:             gdendukuri@salesforce.com
+  email:             saksham.agarwal@salesforce.com
+
+#Sidebar
+github:
+  repo               https://github.com/salesforce-vto/Journey2Employment
+
+# Custom vars
+version:             2.0.0
+usefulLinks:             /usefulLinks
+contributors:           /contributors

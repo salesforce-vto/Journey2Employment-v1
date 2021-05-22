@@ -1,0 +1,62 @@
+<!-- Toggleable sidebar -->
+<div class="slds-grid app-split-view">
+  <div class="slds-split-view_container slds-is-open">
+    <button 
+      class="slds-button slds-button_icon slds-button_icon slds-split-view__toggle-button slds-is-open" 
+      aria-controls="split-view-id" 
+      aria-expanded="true" 
+      title="Close Menu"
+    >
+      <svg class="slds-button__icon slds-button__icon_x-small" aria-hidden="true">
+        <use xlink:href="{{ site.baseurl }}/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
+      </svg>
+      <span class="slds-assistive-text">Close Split View</span>
+    </button>
+    <article aria-hidden="false" id="split-view-id" class="slds-split-view slds-grid slds-grid_vertical slds-grow">
+      <header class="slds-split-view__header">
+        <p>{{ site.description }}</p>
+      </header>
+      <nav class="app-navigation">
+        <ul class="slds-list_vertical slds-has-block-links">
+          <li class="list__item {% if page.url == '/' %}slds-is-selected slds-is-active{% endif %}">
+            <a 
+              class="app-navigation__action"
+              href="{{ site.baseurl }}/index"
+            >
+              <span class="slds-media slds-media_center">
+                <span class="slds-media__body">Home</span>
+              </span>
+            </a>
+          </li>
+          <br/>
+          <li>
+            {% assign pages_list = site.pages | sort:"url" %}
+            {% include content.html %}
+          </li>
+          <li class="list__item {% if page.url == site.usefulLinks %}slds-is-selected slds-is-active{% endif %}">
+            <a
+              class="app-navigation__action"
+              href="{{ site.baseurl }}{{ site.usefulLinks }}">
+              <span class="slds-media slds-media_center">
+                <span class="slds-media__body">Useful Links</span>
+              </span>
+            </a>
+          </li>
+          <li class="list__item {% if page.url == site.contributors %}slds-is-selected slds-is-active{% endif %}">
+            <a
+              class="app-navigation__action"
+              href="{{ site.baseurl }}{{ site.contributors }}">
+              <span class="slds-media slds-media_center">
+                <span class="slds-media__body">Contributors</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <footer class="slds-border_top slds-p-around_small" style="position:absolute;bottom:0;"}>
+        <div>Currently v{{ site.version }}</div>
+        <div>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</div>
+      </footer>
+    </article>
+  </div>
+</div>
