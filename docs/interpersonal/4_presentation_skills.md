@@ -1,12 +1,12 @@
 ---
 layout: interpersonal_skills
-title: Goal Setting/ Statement of Purpose
+title: Presentation Skills
 ---
 
 - Topics Covered:
     
-    Golden Circle, Statement of Purpose, Writing a personal V2MOM
-
+    Package Content, Body Language & Tone
+    
 - Resources:
     1. [Session Video]()
     2. [Slide Deck]()

@@ -1,12 +1,12 @@
 ---
 layout: interpersonal_skills
-title: Goal Setting/ Statement of Purpose
+title: Personal Finance 101
 ---
 
 - Topics Covered:
     
-    Golden Circle, Statement of Purpose, Writing a personal V2MOM
-
+    Budgeting, Savings & basics of income tax
+    
 - Resources:
     1. [Session Video]()
     2. [Slide Deck]()
