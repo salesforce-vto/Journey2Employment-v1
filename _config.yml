@@ -26,3 +26,5 @@ github:
 version:             1.0.0
 usefulLinks:             /usefulLinks
 contributors:           /contributors
+
+theme: jekyll-theme-minimal
