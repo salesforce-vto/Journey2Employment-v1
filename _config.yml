@@ -8,8 +8,8 @@ permalink:           pretty
 title:               Salesforce Industries Journey To Employment
 tagline:             ''
 description:         ''
-url:                 /Journey2Employment
-baseurl:             /Journey2Employment
+url:                 /Journey2Employment-v1
+baseurl:             /Journey2Employment-v1
 
 # About/contact
 author:
@@ -20,7 +20,7 @@ author:
 
 #Sidebar
 github:
-  repo               https://github.com/salesforce-vto/Journey2Employment
+  repo               https://github.com/salesforce-vto/Journey2Employment-v1
 
 # Custom vars
 version:             1.0.0
